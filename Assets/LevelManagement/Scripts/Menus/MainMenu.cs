@@ -16,7 +16,7 @@ namespace LevelManagement
 
         // reference to transition prefab
         [SerializeField]
-        private TransitionFader startTransitionPrefab;
+        private TransitionFader _startTransitionPrefab;
 
         // reference to DataManager
         private DataManager _dataManager;
@@ -75,7 +75,7 @@ namespace LevelManagement
         // start the transition and play the first level
         private IEnumerator OnPlayPressedRoutine()
         {
-            TransitionFader.PlayTransition(startTransitionPrefab);
+            TransitionFader.PlayTransition(_startTransitionPrefab);
             LevelLoader.LoadNextLevel();
             yield return new WaitForSeconds(_playDelay);
             GameMenu.Open();
