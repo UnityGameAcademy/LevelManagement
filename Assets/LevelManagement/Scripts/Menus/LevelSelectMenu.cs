@@ -25,7 +25,16 @@ namespace LevelManagement.Missions
         [SerializeField]
         protected GameObject _lockIcon;
         [SerializeField]
-        protected Button _playButton;
+        protected Button _startButton;
+
+        // delay before we play the game
+        [SerializeField]
+        private float _playDelay = 0.5f;
+
+        // reference to transition prefab
+        [SerializeField]
+        private TransitionFader _startTransitionPrefab;
+
         #endregion
 
         #region PROTECTED
@@ -98,8 +107,22 @@ namespace LevelManagement.Missions
 
             // handle any pre-processing
 
-            // load up the appropriate level
-            LevelLoader.LoadLevel(selectedMission?.SceneName);
+            // load up the appropriate level after transition
+
+
+            StartCoroutine(StartPressedRoutine(selectedMission?.SceneName));
+        }
+        IEnumerator StartPressedRoutine(string sceneName)
+        {
+            TransitionFader.PlayTransition(_startTransitionPrefab);
+            LevelLoader.LoadLevel(sceneName);
+            yield return new WaitForSeconds(_playDelay);
+
+
+
+            yield return null;
+
+            GameMenu.Open();
         }
 
 
