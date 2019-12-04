@@ -19,8 +19,6 @@ namespace LevelManagement.Missions
         protected string _id;
         [SerializeField]
         protected Sprite _image;
-        [SerializeField]
-        protected AudioClip _backgroundMusic;
         #endregion
 
         #region PROPERTIES
@@ -29,7 +27,7 @@ namespace LevelManagement.Missions
         public string SceneName => _sceneName;
         public string Id => _id;
         public Sprite Image => _image;
-        protected AudioClip BackgroundMusic => _backgroundMusic;
+
 
         #endregion
 

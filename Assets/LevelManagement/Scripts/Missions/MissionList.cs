@@ -8,8 +8,12 @@ namespace LevelManagement.Missions
     public class MissionList : ScriptableObject
     {
         [SerializeField]
-        public List<MissionSpecs> _missions;
-        public int TotalMissions { get { return _missions.Count; } }
+        private List<MissionSpecs> _missions;
+
+
+
+        //public int TotalMissions { get { return _missions.Count; } }
+        public int TotalMissions => _missions.Count;
 
         public MissionSpecs GetMission(int index)
         {

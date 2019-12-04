@@ -17,6 +17,11 @@ namespace LevelManagement.Data
         public float sfxVolume;
         public float musicVolume;
 
+        // integers to store selected and unlocked levels
+        public int selectedLevel;
+        public List<string> unlockedLevels;
+
+
         // hash value calculated from the contents of SaveData
         public string hashValue;
 
@@ -28,6 +33,7 @@ namespace LevelManagement.Data
             sfxVolume = 0f;
             musicVolume = 0f;
             hashValue = String.Empty;
+            selectedLevel = 0;
         }
 
     }
