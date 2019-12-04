@@ -13,7 +13,7 @@ namespace LevelManagement.Missions
         #region  INSPECTOR
 
         [SerializeField]
-        protected MissionSelector _missionSelector; 
+        protected MissionSelector _missionSelector;
 
         [SerializeField]
         protected Image _previewImage;
@@ -27,6 +27,10 @@ namespace LevelManagement.Missions
         protected GameObject _lockIcon;
         [SerializeField]
         protected Button _playButton;
+        #endregion
+
+        #region PROTECTED
+        protected const string _defaultInfo = "COMPLETE PREVIOUS LEVEL TO UNLOCK";
         #endregion
 
         private void SetLevelName()
@@ -45,12 +49,13 @@ namespace LevelManagement.Missions
 
         }
 
- 
-        
+
+
 
         public void OnLockedPressed()
         {
             // add notification that this level is locked
+
         }
 
         public void OnPlayPressed()
@@ -61,7 +66,7 @@ namespace LevelManagement.Missions
                 return;
             }
             MissionSpecs selectedMission = _missionSelector?.GetCurrentMission();
-            
+
 
             // return if locked
 
