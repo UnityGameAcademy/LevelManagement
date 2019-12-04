@@ -16,15 +16,15 @@ MonoBehaviour:
   - _name: 'Level 1: Tutorial'
     _description: Starter level.  Tutorial and introduction.
     _sceneName: Level1
-    _id: 1-1
+    _id: L1
     _image: {fileID: 0}
   - _name: 'Level 2: A new level'
     _description: Intermediate level.  Take the player further.
     _sceneName: Level2
-    _id: 1-2
+    _id: L2
     _image: {fileID: 0}
   - _name: 'Level 3: another level'
     _description: Another level of the game.
     _sceneName: Level3
-    _id: 1-3
+    _id: L3
     _image: {fileID: 0}

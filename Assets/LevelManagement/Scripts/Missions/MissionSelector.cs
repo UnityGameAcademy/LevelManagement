@@ -21,6 +21,7 @@ namespace LevelManagement.Missions
 
         #region properties
         public int CurrentIndex => _currentIndex;
+       
         #endregion
 
 
@@ -32,7 +33,21 @@ namespace LevelManagement.Missions
                 return;
             }
 
-            _currentIndex = _currentIndex % _missionList.TotalMissions;
+            if (_currentIndex >= _missionList.TotalMissions)
+            {
+                _currentIndex = 0;
+            }
+            
+            if (_currentIndex < 0)
+            {
+                _currentIndex = _missionList.TotalMissions - 1;
+            }
+        }
+
+        public void SetIndex(int index)
+        {
+            _currentIndex = index;
+            ClampIndex();
         }
 
         public void IncrementIndex()
@@ -46,13 +61,17 @@ namespace LevelManagement.Missions
             _currentIndex--;
             ClampIndex();
         }
+        // return mission specs based on an index
+        public MissionSpecs GetMission(int index)
+        {
+            return _missionList.GetMission(index);
+        }
 
+        // return current mission specs
         public MissionSpecs GetCurrentMission()
         {
             return _missionList.GetMission(_currentIndex);
         }
-
-         
 
     }
 

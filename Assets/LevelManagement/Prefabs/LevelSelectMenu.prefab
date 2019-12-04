@@ -272,7 +272,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3259762856473993085}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7327871598369377243}
+        m_MethodName: OnPreviousPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &3259762856581019890
@@ -389,7 +400,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3259762856581019887}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7327871598369377243}
+        m_MethodName: OnNextPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &3259762856768439534
@@ -659,7 +681,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 60, y: -90}
-  m_SizeDelta: {x: 500, y: 350}
+  m_SizeDelta: {x: 500, y: 300}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &3259762857587867805
 CanvasRenderer:
@@ -720,7 +742,7 @@ GameObject:
   - component: {fileID: 4657163231569106952}
   - component: {fileID: 7985266254574789847}
   - component: {fileID: 7327871598369377243}
-  - component: {fileID: 7327871598369377240}
+  - component: {fileID: 2035229818544131516}
   m_Layer: 5
   m_Name: LevelSelectMenu
   m_TagString: Untagged
@@ -822,14 +844,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d671c594960d8c74fa959613c41ce71a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _missionSelector: {fileID: 7327871598369377240}
+  _missionSelector: {fileID: 0}
   _previewImage: {fileID: 3259762857047697340}
   _levelNameText: {fileID: 3259762856780538131}
   _descriptionText: {fileID: 3259762857587867810}
   _infoText: {fileID: 2978353842396219947}
   _lockIcon: {fileID: 3259762856768439534}
   _playButton: {fileID: 7236776476101506192}
---- !u!114 &7327871598369377240
+--- !u!114 &2035229818544131516
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

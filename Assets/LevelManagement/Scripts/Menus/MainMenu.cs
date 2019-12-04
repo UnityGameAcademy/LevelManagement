@@ -4,6 +4,7 @@ using UnityEngine;
 using SampleGame;
 using UnityEngine.UI;
 using LevelManagement.Data;
+using LevelManagement.Missions;
 
 namespace LevelManagement
 {
@@ -69,16 +70,20 @@ namespace LevelManagement
         // launch the first game level
 		public void OnPlayPressed()
         {
-            StartCoroutine(OnPlayPressedRoutine());
+            LevelSelectMenu.Open();
+           // StartCoroutine(OnPlayPressedRoutine());
         }
 
         // start the transition and play the first level
         private IEnumerator OnPlayPressedRoutine()
         {
             TransitionFader.PlayTransition(_startTransitionPrefab);
-            LevelLoader.LoadNextLevel();
+            //LevelLoader.LoadNextLevel();
             yield return new WaitForSeconds(_playDelay);
-            GameMenu.Open();
+            yield return null;
+            LevelSelectMenu.Open();
+
+            //GameMenu.Open();
         }
 
 

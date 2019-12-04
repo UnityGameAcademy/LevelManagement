@@ -9,7 +9,6 @@ namespace LevelManagement.Missions
     public class LevelSelectMenu : Menu<LevelSelectMenu>
     {
 
-
         #region  INSPECTOR
 
         [SerializeField]
@@ -31,26 +30,53 @@ namespace LevelManagement.Missions
 
         #region PROTECTED
         protected const string _defaultInfo = "COMPLETE PREVIOUS LEVEL TO UNLOCK";
+
+        //protected MissionList _missionList;
+
         #endregion
 
-        private void SetLevelName()
+        protected override void Awake()
         {
+            base.Awake();
+            _missionSelector = GetComponent<MissionSelector>();
 
         }
 
-        private void SetImage(Sprite image)
+        private void OnEnable()
         {
-
+            UpdateInfo();
         }
 
         // load up a level by index
         public void Select(int levelIndex)
         {
-
+            _missionSelector.SetIndex(levelIndex);
         }
 
+        public void UpdateInfo()
+        {
 
+            MissionSpecs currentMission = _missionSelector?.GetCurrentMission();
 
+            // check if Locked and show lock icon
+            _previewImage.sprite = currentMission.Image;
+
+            _levelNameText.text = currentMission.Name;
+            _descriptionText.text = currentMission.Description;
+            _infoText.text = string.Empty;
+        }
+
+        public void OnNextPressed()
+        {
+            _missionSelector.IncrementIndex();
+            UpdateInfo();
+        }
+
+        public void OnPreviousPressed()
+        {
+            _missionSelector.DecrementIndex();
+            UpdateInfo();
+        }
 
         public void OnLockedPressed()
         {
@@ -58,7 +84,7 @@ namespace LevelManagement.Missions
 
         }
 
-        public void OnPlayPressed()
+        public void OnStartPressed()
         {
             if (_missionSelector == null)
             {
@@ -73,7 +99,7 @@ namespace LevelManagement.Missions
             // handle any pre-processing
 
             // load up the appropriate level
-
+            LevelLoader.LoadLevel(selectedMission?.SceneName);
         }
 
 
