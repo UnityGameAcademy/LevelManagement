@@ -61,6 +61,7 @@ namespace LevelManagement.Missions
             _currentIndex--;
             ClampIndex();
         }
+
         // return mission specs based on an index
         public MissionSpecs GetMission(int index)
         {

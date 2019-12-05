@@ -13,7 +13,6 @@ namespace LevelManagement.Missions
 
         [SerializeField]
         protected MissionSelector _missionSelector;
-
         [SerializeField]
         protected Image _previewImage;
         [SerializeField]
@@ -39,9 +38,6 @@ namespace LevelManagement.Missions
 
         #region PROTECTED
         protected const string _defaultInfo = "COMPLETE PREVIOUS LEVEL TO UNLOCK";
-
-        //protected MissionList _missionList;
-
         #endregion
 
         protected override void Awake()
@@ -67,12 +63,15 @@ namespace LevelManagement.Missions
 
             MissionSpecs currentMission = _missionSelector?.GetCurrentMission();
 
-            // check if Locked and show lock icon
+
             _previewImage.sprite = currentMission.Image;
 
             _levelNameText.text = currentMission.Name;
             _descriptionText.text = currentMission.Description;
             _infoText.text = string.Empty;
+
+            // check lock status, currently defaulting to off
+            _lockIcon.gameObject.SetActive(false);
         }
 
         public void OnNextPressed()
@@ -81,16 +80,16 @@ namespace LevelManagement.Missions
             UpdateInfo();
         }
 
+        public override void OnBackPressed()
+        {
+            base.OnBackPressed();
+            MainMenu.Open();
+        }
+
         public void OnPreviousPressed()
         {
             _missionSelector.DecrementIndex();
             UpdateInfo();
-        }
-
-        public void OnLockedPressed()
-        {
-            // add notification that this level is locked
-
         }
 
         public void OnStartPressed()
@@ -108,23 +107,16 @@ namespace LevelManagement.Missions
             // handle any pre-processing
 
             // load up the appropriate level after transition
-
-
-            StartCoroutine(StartPressedRoutine(selectedMission?.SceneName));
+            StartCoroutine(StartMissionRoutine(selectedMission?.SceneName));
         }
-        IEnumerator StartPressedRoutine(string sceneName)
+
+        IEnumerator StartMissionRoutine(string sceneName)
         {
             TransitionFader.PlayTransition(_startTransitionPrefab);
             LevelLoader.LoadLevel(sceneName);
             yield return new WaitForSeconds(_playDelay);
-
-
-
-            yield return null;
-
             GameMenu.Open();
         }
-
 
     }
 

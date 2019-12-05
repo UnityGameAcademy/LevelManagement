@@ -9,14 +9,19 @@ namespace LevelManagement.Missions
     public class MissionSpecs 
     {
         #region INSPECTOR
+        // long name used in menu
         [SerializeField]
         protected string _name;
+        // general mission details
         [SerializeField] [Multiline]
         protected string _description;
+        // scene name for loading
         [SerializeField]
         protected string _sceneName;
+        // unique identifier for storing data
         [SerializeField]
         protected string _id;
+        // image used for menu 
         [SerializeField]
         protected Sprite _image;
         #endregion

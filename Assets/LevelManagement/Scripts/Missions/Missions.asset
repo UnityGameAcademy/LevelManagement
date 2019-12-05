@@ -17,14 +17,14 @@ MonoBehaviour:
     _description: Starter level.  Tutorial and introduction.
     _sceneName: Level1
     _id: L1
-    _image: {fileID: 0}
+    _image: {fileID: 21300000, guid: 62204dd05c3441348b200eab90905070, type: 3}
   - _name: 'Level 2: A new level'
     _description: Intermediate level.  Take the player further.
     _sceneName: Level2
     _id: L2
-    _image: {fileID: 0}
+    _image: {fileID: 21300000, guid: 417f1bbacf8c13c42b2331301569d5af, type: 3}
   - _name: 'Level 3: another level'
     _description: Another level of the game.
     _sceneName: Level3
     _id: L3
-    _image: {fileID: 0}
+    _image: {fileID: 21300000, guid: 13851456c0d36cf4c80800c87d584a89, type: 3}

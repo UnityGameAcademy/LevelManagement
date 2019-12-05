@@ -59,12 +59,17 @@ namespace LevelManagement.Data
             _jsonSaver.Load(_saveData);
         }
 
-        public void SetLevelUnlock(string id, bool isUnlocked = true)
+        public void SetLevelLock(string levelId, bool isUnlocked = true)
         {
             // add an id to the set of unlocked maps
 
 
             Save();
+        }
+
+        public void UnlockLevel(string levelId)
+        {
+            SetLevelLock(levelId, true);
         }
 
 	}
