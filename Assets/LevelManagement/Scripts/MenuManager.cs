@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Reflection;
-using LevelManagement.Missions;
 
 namespace LevelManagement
 {
     // class for managing the Menus
     public class MenuManager : MonoBehaviour
     {
-        #region INSPECTOR
+
         // define all Menu prefabs here and assign in the Inspector
         [SerializeField]
         private  MainMenu mainMenuPrefab;
@@ -23,11 +22,7 @@ namespace LevelManagement
         private PauseMenu pauseMenuPrefab;
         [SerializeField]
         private WinScreen winScreenPrefab;
-        [SerializeField]
-        private LevelSelectMenu levelSelectMenu;
-        #endregion
 
-        #region PRIVATE
         // transform for organizing your Menus, defaults to Menus object
         [SerializeField]
         private Transform _menuParent;
@@ -35,13 +30,10 @@ namespace LevelManagement
         // stack for tracking our active Menus
         private Stack<Menu> _menuStack = new Stack<Menu>();
 
-        #endregion
-
-        #region STATIC
         // single instance
         private static MenuManager _instance;
         public static MenuManager Instance { get { return _instance; } }
-        #endregion
+
 
         private void Awake()
         {

@@ -37,7 +37,6 @@ namespace LevelManagement
             if (MenuManager.Instance != null && Instance != null)
             {
                 MenuManager.Instance.OpenMenu(Instance);
-                Debug.Log(Instance.name);
             }
         }
 

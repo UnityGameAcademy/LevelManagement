@@ -28,12 +28,6 @@ namespace LevelManagement.Data
             set { _saveData.musicVolume = value; }
         }
 
-        public int SelectedLevel
-        {
-            get { return _saveData.selectedLevel; }
-            set { _saveData.selectedLevel = value; }
-        }
-
         public string PlayerName
         {
             get { return _saveData.playerName; }
@@ -57,19 +51,6 @@ namespace LevelManagement.Data
         public void Load()
         {
             _jsonSaver.Load(_saveData);
-        }
-
-        public void SetLevelLock(string levelId, bool isUnlocked = true)
-        {
-            // add an id to the set of unlocked maps
-
-
-            Save();
-        }
-
-        public void UnlockLevel(string levelId)
-        {
-            SetLevelLock(levelId, true);
         }
 
 	}

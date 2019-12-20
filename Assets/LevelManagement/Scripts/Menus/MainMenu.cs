@@ -4,7 +4,6 @@ using UnityEngine;
 using SampleGame;
 using UnityEngine.UI;
 using LevelManagement.Data;
-using LevelManagement.Missions;
 
 namespace LevelManagement
 {
@@ -17,7 +16,7 @@ namespace LevelManagement
 
         // reference to transition prefab
         [SerializeField]
-        private TransitionFader _startTransitionPrefab;
+        private TransitionFader startTransitionPrefab;
 
         // reference to DataManager
         private DataManager _dataManager;
@@ -70,23 +69,17 @@ namespace LevelManagement
         // launch the first game level
 		public void OnPlayPressed()
         {
-            LevelSelectMenu.Open();
-           // StartCoroutine(OnPlayPressedRoutine());
+            StartCoroutine(OnPlayPressedRoutine());
         }
 
         // start the transition and play the first level
         private IEnumerator OnPlayPressedRoutine()
         {
-            TransitionFader.PlayTransition(_startTransitionPrefab);
-            //LevelLoader.LoadNextLevel();
+            TransitionFader.PlayTransition(startTransitionPrefab);
+            LevelLoader.LoadNextLevel();
             yield return new WaitForSeconds(_playDelay);
-            yield return null;
-            LevelSelectMenu.Open();
-
-            //GameMenu.Open();
+            GameMenu.Open();
         }
-
-
 
         // open the SettingsMenu
         public void OnSettingsPressed()

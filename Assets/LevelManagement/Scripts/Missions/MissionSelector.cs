@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 namespace LevelManagement.Missions
 {
-
     // handles selecting an item from a wrap around list
     public class MissionSelector : MonoBehaviour
     {
@@ -19,9 +18,8 @@ namespace LevelManagement.Missions
 
         #endregion 
 
-        #region properties
+        #region PROPERTIES
         public int CurrentIndex => _currentIndex;
-       
         #endregion
 
 
@@ -68,7 +66,7 @@ namespace LevelManagement.Missions
             return _missionList.GetMission(index);
         }
 
-        // return current mission specs
+        // return mission specs for current index
         public MissionSpecs GetCurrentMission()
         {
             return _missionList.GetMission(_currentIndex);

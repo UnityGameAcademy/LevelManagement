@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using System;
 
 namespace LevelManagement.Missions
@@ -18,7 +16,7 @@ namespace LevelManagement.Missions
         // scene name for loading
         [SerializeField]
         protected string _sceneName;
-        // unique identifier for storing data
+        // unique identifier for save data
         [SerializeField]
         protected string _id;
         // image used for menu 
@@ -32,11 +30,7 @@ namespace LevelManagement.Missions
         public string SceneName => _sceneName;
         public string Id => _id;
         public Sprite Image => _image;
-
-
         #endregion
-
-
     }
 
 }
