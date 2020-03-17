@@ -9,22 +9,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: beb01b846ca376646bc570612d758f7c, type: 3}
+  m_Script: {fileID: 11500000, guid: 45dc0726a40c9f640807a23b50b708af, type: 3}
   m_Name: Missions
   m_EditorClassIdentifier: 
   _missions:
   - _name: 'Level 1: Tutorial'
-    _description: Starter level.  Tutorial and introduction.
+    _description: "Starter level.  Tutorial and introduction.\t"
     _sceneName: Level1
     _id: L1
-    _image: {fileID: 21300000, guid: 62204dd05c3441348b200eab90905070, type: 3}
-  - _name: 'Level 2: A new level'
+    _image: {fileID: 21300000, guid: e5c09194ee132af43a9a84fe498de2a4, type: 3}
+  - _name: 'Leve 2: Tutorial'
     _description: Intermediate level.  Take the player further.
     _sceneName: Level2
     _id: L2
-    _image: {fileID: 21300000, guid: 417f1bbacf8c13c42b2331301569d5af, type: 3}
-  - _name: 'Level 3: another level'
+    _image: {fileID: 21300000, guid: 02431477de8e5634594d16ac1da7132c, type: 3}
+  - _name: 'Level 3: Another Level'
     _description: Another level of the game.
     _sceneName: Level3
     _id: L3
-    _image: {fileID: 21300000, guid: 13851456c0d36cf4c80800c87d584a89, type: 3}
+    _image: {fileID: 21300000, guid: c934e4089e354254aa50127e8a171f6d, type: 3}
