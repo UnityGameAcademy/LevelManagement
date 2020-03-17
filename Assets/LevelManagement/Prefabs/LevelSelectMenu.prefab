@@ -416,8 +416,8 @@ CanvasGroup:
   m_GameObject: {fileID: 5548336813030331547}
   m_Enabled: 1
   m_Alpha: 1
-  m_Interactable: 0
-  m_BlocksRaycasts: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
 --- !u!1 &6560701719017284978
 GameObject:
@@ -658,6 +658,7 @@ GameObject:
   - component: {fileID: 7148365202725729899}
   - component: {fileID: 8560996897140637620}
   - component: {fileID: 2484920445684094576}
+  - component: {fileID: 538308279925492893}
   m_Layer: 5
   m_Name: MissionDescriptionText
   m_TagString: Untagged
@@ -729,6 +730,18 @@ MonoBehaviour:
     consectetur adipiscing elit pellentesque habitant morbi tristique senectus. Mollis
     aliquam ut porttitor leo a. Lacus vel facilisis volutpat est. Gravida rutrum quisque
     non tellus orci ac auctor augue. '
+--- !u!225 &538308279925492893
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8594873126057206808}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &8960366112905740088
 GameObject:
   m_ObjectHideFlags: 0
@@ -789,7 +802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0.9622642, g: 0.9622642, b: 0.9622642, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -846,7 +859,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8786169221718120370}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7645052662168304714}
+        m_MethodName: OnBackPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &9003589867156368819
 GameObject:
   m_ObjectHideFlags: 0
@@ -1309,6 +1333,9 @@ MonoBehaviour:
   _nameText: {fileID: 4267452911956743932}
   _descriptionText: {fileID: 2484920445684094576}
   _previewImage: {fileID: 1493187403757651734}
+  _playDelay: 0.5
+  _playTransitionPrefab: {fileID: 114970023746679392, guid: 613757411f6b548a5b3aff05cbf09ad8,
+    type: 3}
 --- !u!1 &9004399968183309289
 GameObject:
   m_ObjectHideFlags: 0
@@ -1501,7 +1528,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7645052662168304714}
         m_MethodName: OnPlayPressed
         m_Mode: 1
         m_Arguments:

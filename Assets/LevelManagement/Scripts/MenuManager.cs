@@ -22,6 +22,9 @@ namespace LevelManagement
         private PauseMenu pauseMenuPrefab;
         [SerializeField]
         private WinScreen winScreenPrefab;
+        [SerializeField]
+        private LevelSelectMenu levelSelectMenuPrefab;
+
 
         // transform for organizing your Menus, defaults to Menus object
         [SerializeField]

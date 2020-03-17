@@ -11,12 +11,12 @@ namespace LevelManagement
     public class MainMenu : Menu<MainMenu>
     {
         // delay before we play the game
-        [SerializeField]
-        private float _playDelay = 0.5f;
+        //[SerializeField]
+        //private float _playDelay = 0.5f;
 
         // reference to transition prefab
-        [SerializeField]
-        private TransitionFader startTransitionPrefab;
+        //[SerializeField]
+        //private TransitionFader startTransitionPrefab;
 
         // reference to DataManager
         private DataManager _dataManager;
@@ -69,17 +69,17 @@ namespace LevelManagement
         // launch the first game level
 		public void OnPlayPressed()
         {
-            StartCoroutine(OnPlayPressedRoutine());
+            LevelSelectMenu.Open();
         }
 
         // start the transition and play the first level
-        private IEnumerator OnPlayPressedRoutine()
-        {
-            TransitionFader.PlayTransition(startTransitionPrefab);
-            LevelLoader.LoadNextLevel();
-            yield return new WaitForSeconds(_playDelay);
-            GameMenu.Open();
-        }
+        //private IEnumerator OnPlayPressedRoutine()
+        //{
+        //    TransitionFader.PlayTransition(startTransitionPrefab);
+        //    LevelLoader.LoadNextLevel();
+        //    yield return new WaitForSeconds(_playDelay);
+        //    GameMenu.Open();
+        //}
 
         // open the SettingsMenu
         public void OnSettingsPressed()
