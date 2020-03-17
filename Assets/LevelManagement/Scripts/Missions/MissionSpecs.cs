@@ -1,27 +1,19 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using System;
 
 namespace LevelManagement.Missions
 {
     [Serializable]
-    public class MissionSpecs 
+    public class MissionSpecs
     {
         #region INSPECTOR
-        // long name used in menu
-        [SerializeField]
-        protected string _name;
-        // general mission details
-        [SerializeField] [Multiline]
-        protected string _description;
-        // scene name for loading
-        [SerializeField]
-        protected string _sceneName;
-        // unique identifier for save data
-        [SerializeField]
-        protected string _id;
-        // image used for menu 
-        [SerializeField]
-        protected Sprite _image;
+        [SerializeField] protected string _name;
+        [SerializeField] [Multiline] protected string _description;
+        [SerializeField] protected string _sceneName;
+        [SerializeField] protected string _id;
+        [SerializeField] protected Sprite _image;
         #endregion
 
         #region PROPERTIES
@@ -31,6 +23,7 @@ namespace LevelManagement.Missions
         public string Id => _id;
         public Sprite Image => _image;
         #endregion
-    }
 
+    
+    }
 }
