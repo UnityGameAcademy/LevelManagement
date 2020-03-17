@@ -1,11 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace LevelManagement.Missions
 {
-    // handles selecting an item from a wrap around list
+
     public class MissionSelector : MonoBehaviour
     {
         #region INSPECTOR
@@ -15,13 +14,11 @@ namespace LevelManagement.Missions
 
         #region PROTECTED
         protected int _currentIndex = 0;
-
-        #endregion 
-
-        #region PROPERTIES
-        public int CurrentIndex => _currentIndex;
         #endregion
 
+        #region PROPERTIES
+        protected int CurrentIndex => _currentIndex;
+        #endregion
 
         public void ClampIndex()
         {
@@ -35,14 +32,14 @@ namespace LevelManagement.Missions
             {
                 _currentIndex = 0;
             }
-            
+
             if (_currentIndex < 0)
             {
                 _currentIndex = _missionList.TotalMissions - 1;
             }
         }
 
-        public void SetIndex(int index)
+        public void SetIndex (int index)
         {
             _currentIndex = index;
             ClampIndex();
@@ -50,28 +47,23 @@ namespace LevelManagement.Missions
 
         public void IncrementIndex()
         {
-            _currentIndex++;
-            ClampIndex();
+            SetIndex(_currentIndex + 1);
         }
 
         public void DecrementIndex()
         {
-            _currentIndex--;
-            ClampIndex();
+            SetIndex(_currentIndex - 1);
         }
 
-        // return mission specs based on an index
         public MissionSpecs GetMission(int index)
         {
             return _missionList.GetMission(index);
         }
 
-        // return mission specs for current index
         public MissionSpecs GetCurrentMission()
         {
             return _missionList.GetMission(_currentIndex);
         }
-
     }
 
 }
