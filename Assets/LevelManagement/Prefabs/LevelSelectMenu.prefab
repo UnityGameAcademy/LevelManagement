@@ -117,8 +117,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5499968419228760211}
-        m_MethodName: DecrementIndex
+      - m_Target: {fileID: 7645052662168304714}
+        m_MethodName: OnPreviousPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -321,8 +321,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5499968419228760211}
-        m_MethodName: IncrementIndex
+      - m_Target: {fileID: 7645052662168304714}
+        m_MethodName: OnNextPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1190,6 +1190,7 @@ GameObject:
   - component: {fileID: 9036463800528944351}
   - component: {fileID: 9035899778616364201}
   - component: {fileID: 5499968419228760211}
+  - component: {fileID: 7645052662168304714}
   m_Layer: 5
   m_Name: LevelSelectMenu
   m_TagString: Untagged
@@ -1293,6 +1294,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _missionList: {fileID: 11400000, guid: 9fa507ec2d7463844aa19142e5da3180, type: 2}
+--- !u!114 &7645052662168304714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9004249338126704611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a36d094f7cba6b9408bd9c9c0e7d4d7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nameText: {fileID: 4267452911956743932}
+  _descriptionText: {fileID: 2484920445684094576}
+  _previewImage: {fileID: 1493187403757651734}
 --- !u!1 &9004399968183309289
 GameObject:
   m_ObjectHideFlags: 0
